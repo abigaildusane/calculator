@@ -1,35 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Web Calculator</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Link the CSS file -->
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Connect CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <title>Web Calculator</title>
 </head>
-
 <body>
-  <div class="calculator-box">
-    <h1>Web Calculator</h1>
 
-    <form method="POST">
-      <input type="text" name="num1" placeholder="First number" required>
+    <div class="calculator-box">
+        <h1>Web Calculator</h1>
 
-      <select name="op">
-        <option value="+">+</option>
-        <option value="-">−</option>
-        <option value="*">*</option>
-        <option value="/">/</option>
-      </select>
+        <form method="POST">
+            <input type="text" name="num1" placeholder="First number" required>
 
-      <input type="text" name="num2" placeholder="Second number" required>
+            <select name="op">
+                <option value="+">+</option>
+                <option value="-">−</option>
+                <option value="*">×</option>
+                <option value="/">÷</option>
+            </select>
 
-      <button type="submit">Calculate</button>
-    </form>
+            <input type="text" name="num2" placeholder="Second number" required>
 
-    {% if result != "" %}
-    <p class="result-box">Result: {{ result }}</p>
-    {% endif %}
-  </div>
+            <button type="submit">Calculate</button>
+        </form>
+
+        {% if result != "" %}
+        <div class="result-box">
+            Result: {{ result }}
+        </div>
+        {% endif %}
+    </div>
+
 </body>
 </html>
