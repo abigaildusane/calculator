@@ -1,16 +1,16 @@
-print("Simple Calculator")
+def calculate(num1, op, num2):
+    num1 = float(num1)
+    num2 = float(num2)
 
-num1 = float(input("Enter first number: "))
-op = input("Enter operator (+, -, *, /): ")
-num2 = float(input("Enter second number: "))
-
-if op == "+":
-    print(num1 + num2)
-elif op == "-":
-    print(num1 - num2)
-elif op == "*":
-    print(num1 * num2)
-elif op == "/":
-    print(num1 / num2)
-else:
-    print("Invalid operator")
+    if op == "+":
+        return num1 + num2
+    elif op == "-":
+        return num1 - num2
+    elif op == "*":
+        return num1 * num2
+    elif op == "/":
+        if num2 == 0:
+            return "Cannot divide by zero"
+        return num1 / num2
+    else:
+        return "Invalid operator"
